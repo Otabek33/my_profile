@@ -31,7 +31,7 @@ class CustomUser(AbstractUser):
     address = models.CharField(max_length=255, blank=True, null=False)
     birthdate = models.DateField(_("День рождение"), max_length=50, blank=True, null=True)
     zip_code = models.IntegerField(blank=True, null=True)
-    job_title = models.ForeignKey(JobTitle, on_delete=models.SET_NULL, null=True, blank=True,
+    job_title = models.ForeignKey(JobTitle, on_delete=models.CASCADE, null=True, blank=True,
                                   related_name='user_job_title')
 
     def __str__(self):
